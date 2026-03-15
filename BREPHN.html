@@ -1,0 +1,309 @@
+z<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bienes Raíces Elite Prime</title>
+
+<style>
+
+body{
+font-family: 'Segoe UI', Arial, sans-serif;
+margin:0;
+background:#f2f2f2;
+color:#333;
+}
+
+header{
+background:#1e6b3a;
+color:white;
+text-align:center;
+padding:30px 20px;
+}
+
+header h1{
+margin:0;
+font-size:32px;
+}
+
+header p{
+margin-top:8px;
+font-size:16px;
+}
+
+nav{
+background:#14522c;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+padding:12px;
+}
+
+nav a{
+color:white;
+margin:10px 15px;
+text-decoration:none;
+font-weight:bold;
+cursor:pointer;
+font-size:16px;
+}
+
+nav a:hover{
+text-decoration:underline;
+}
+
+section{
+display:none;
+padding:30px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+section.active{
+display:block;
+}
+
+.propiedades{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+margin-top:25px;
+}
+
+.propiedad{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 5px 12px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.propiedad:hover{
+transform:translateY(-4px);
+}
+
+.titulo{
+font-size:20px;
+font-weight:bold;
+color:#1e6b3a;
+cursor:pointer;
+}
+
+.info{
+display:none;
+margin-top:12px;
+line-height:1.6;
+}
+
+footer{
+background:#1e6b3a;
+color:white;
+text-align:center;
+padding:18px;
+margin-top:40px;
+}
+
+.contacto a{
+display:block;
+font-size:18px;
+margin:10px 0;
+color:#1e6b3a;
+text-decoration:none;
+font-weight:bold;
+}
+
+.contacto a:hover{
+text-decoration:underline;
+}
+
+@media (max-width:600px){
+
+header h1{
+font-size:26px;
+}
+
+nav a{
+font-size:15px;
+}
+
+section{
+padding:25px 15px;
+}
+
+}
+
+</style>
+
+<script>
+
+function mostrarSeccion(id){
+
+let secciones=document.querySelectorAll("section");
+
+secciones.forEach(sec=>{
+sec.classList.remove("active");
+});
+
+document.getElementById(id).classList.add("active");
+
+}
+
+function mostrarInfo(id){
+
+let info=document.getElementById(id);
+
+if(info.style.display==="block"){
+info.style.display="none";
+}else{
+info.style.display="block";
+}
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Bienes Raíces Elite Prime</h1>
+<p>Venta de terrenos, casas y propiedades en excelentes ubicaciones</p>
+
+</header>
+
+<nav>
+
+<a onclick="mostrarSeccion('inicio')">Inicio</a>
+<a onclick="mostrarSeccion('propiedades')">Propiedades</a>
+<a onclick="mostrarSeccion('contacto')">Contáctanos</a>
+
+</nav>
+
+<section id="inicio" class="active">
+
+<h2>Bienvenido</h2>
+
+<p style="font-size:18px;line-height:1.6;max-width:800px;">
+En Bienes Raíces Elite Prime nos especializamos en venta de terrenos, casas y propiedades en excelentes ubicaciones.
+Nuestro objetivo es brindarte confianza, seguridad y asesoría profesional para ayudarte a encontrar la propiedad para tu futuro.
+</p>
+
+<p style="font-size:18px;margin-top:20px;">
+📍 Venta de terrenos<br>
+🏠 Venta de casas<br>
+📄 Asesoría en el proceso de compra
+</p>
+
+</section>
+
+<section id="propiedades">
+
+<h2>Propiedades Disponibles</h2>
+
+<div class="propiedades">
+
+<div class="propiedad">
+
+<div class="titulo" onclick="mostrarInfo('p1')">
+Terreno en Santa Rosa de Copán
+</div>
+
+<div class="info" id="p1">
+
+<p><b>Precio:</b> 8 Mil Lps por vara</p>
+
+<p><b>Ubicación:</b> Solar ubicado atrás de Plaza Alvarado a una cuadra del Bulevar Bueso Arias.</p>
+
+<p><b>Tamaño:</b> 2,050 varas cuadradas</p>
+
+</div>
+
+</div>
+
+
+<div class="propiedad">
+
+<div class="titulo" onclick="mostrarInfo('p2')">
+Casa Moderna en San Pedro Sula
+</div>
+
+<div class="info" id="p2">
+
+<p><b>Precio:</b> 13M de Lps</p>
+
+<p><b>Ubicación:</b> Colonia Universidad</p>
+
+<p><b>Área de construcción:</b> 500 metros</p>
+
+<p><b>Área de terreno:</b> 900 varas</p>
+
+<p>
+Casa de esquina, 2 salas, área social, piscina,
+5 habitaciones privadas, área de lavandería,
+área de servidumbre y completamente amueblada
+con detalles en madera.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="propiedad">
+
+<div class="titulo" onclick="mostrarInfo('p3')">
+Bodega Industrial
+</div>
+
+<div class="info" id="p3">
+
+<p><b>Precio:</b> 17M de Lps</p>
+
+<p><b>Ubicación:</b> Orilla de CA-4, Aldea Trincheras, Santa Rosa de Copán (10 km de la ciudad).</p>
+
+<p><b>Tamaño:</b> 1,200 metros de bodega</p>
+
+<p>
+Proyecto eléctrico instalado,
+2 transformadores de 75kva
+y 2 oficinas.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contacto">
+
+<h2>Contáctanos</h2>
+
+<div class="contacto">
+
+<a href="https://wa.me/50487510734">WhatsApp: +504 8751-0734</a>
+
+<a href="https://www.facebook.com/share/1Gx4XLskB2/?mibextid=wwXIfr" target="_blank">
+Facebook: Bienes Raíces Elite Prime
+</a>
+
+<a href="https://www.instagram.com/bienesraiceseliteprime.hn/">Instagram</a>
+
+</div>
+
+</section>
+
+<footer>
+
+© Bienes Raíces Elite Prime
+
+</footer>
+
+</body>
+
+</html>
